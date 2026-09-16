@@ -1,10 +1,13 @@
+import './styles/app.css';
+import {Score} from './components/score.jsx';
 
 function App() {
 
   return (
-    <>
-      <h1>Hello</h1>
-    </>
+    <div className = "app">
+      <h1>Memory Card Game</h1>
+      <Score />
+    </div>
   )
 }
 

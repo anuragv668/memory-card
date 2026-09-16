@@ -1,0 +1,8 @@
+.app {
+  display: grid;
+  justify-content: center;
+}
+
+h1 {
+  font-style: italic;
+}

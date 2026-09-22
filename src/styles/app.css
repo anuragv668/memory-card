@@ -6,3 +6,12 @@
 h1 {
   font-style: italic;
 }
+
+.cards {
+  margin-top: 20px;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+

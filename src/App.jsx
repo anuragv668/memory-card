@@ -8,7 +8,6 @@ function App() {
   const [highScore, setHighScore] = useState(0);
   const [pokemons, setPokemons] = useState([]);
   const [clicked, setClicked] = useState([]);
-  const [rangeStart, setRangeStart] = useState(randomize());
 
   function resetClicked () {
     setClicked([]);
@@ -27,21 +26,18 @@ function App() {
       id: data.id
     }
   }
-  function randomize() {
-   return Math.floor(Math.random() * 1000) + 1;
-  }
 
   useEffect (() => {
-  async function fetchPokemons(num) {
+  async function fetchPokemons() {
     const results = [];
-    for (let i = num; i < (num + 12); i++) {
-      const pokemon = await getPokemon(i);
+    for (let i = 0; i < 12; i++) {
+      const pokemon = await getPokemon(Math.floor(Math.random() * 1000) + 1);
       results.push(pokemon);
     }
     setPokemons(results);
   }
-  fetchPokemons(rangeStart);
-  }, [rangeStart]);
+  fetchPokemons();
+  }, []);
 
   function clickHandler(pokemon) {
     if (clicked.includes(pokemon.id)) {
